@@ -8,7 +8,7 @@ Personal solutions to the [CSES Problem Set](https://cses.fi/problemset/) by Sub
 |---|---|
 | [Introduction](introduction/index.md) | 4 |
 | [Dynamic Programming](dynamic_programming/index.md) | 17 |
-| [Graph](dynamic_programming/index.md) | 2 |
+| [Graph](graph/index.md) | 2 |
 
 ## About
 
