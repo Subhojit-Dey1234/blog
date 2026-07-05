@@ -67,3 +67,7 @@ nav:
     - Removing Digits: dynamic_programming/removing_digits.md
     - Array Description: dynamic_programming/array_description.md
     - Projects: dynamic_programming/projects.md
+  - Graph:
+    - graph/index.md
+    - Counting Rooms: graph/counting_rooms.md
+    - Labyrinth: graph/labyrinth.md
