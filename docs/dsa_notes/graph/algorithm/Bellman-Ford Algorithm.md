@@ -10,7 +10,7 @@ A negative weight cycle is a loop in a graph where the total sum of the weights 
 
 If it finds that any edge can still be relaxed (i.e., if a shorter path is still found), it means there is a negative weight cycle in the graph. This is because if there were no negative weight cycles, the shortest paths would have been finalized after V-1 passes. The algorithm then reports the presence of a negative cycle, which indicates that no valid shortest path exists for some nodes.
 
-![[Screenshot 2026-07-10 at 12.35.46 PM.png|684]]
+![Bellman-Ford algorithm illustration](../../Screenshot%202026-07-10%20at%2012.35.46%20PM.png)
 
 ```cpp
 #include <iostream>

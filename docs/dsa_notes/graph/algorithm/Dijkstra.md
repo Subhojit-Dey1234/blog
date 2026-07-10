@@ -7,7 +7,7 @@ It works in both directed and un-directed graphs
 ### Goal
 Goal of the algorithm is to find the quickest or easiest way to get from a starting point to an ending point by checking all the possible routes and choosing the ones with smallest total cost
 
-![[Screenshot 2026-07-10 at 12.12.58 PM.png]]
+![Dijkstra shortest path illustration](../../Screenshot%202026-07-10%20at%2012.12.58%20PM.png)
 
 
 ### Dijkstra Algorithm Complexity
