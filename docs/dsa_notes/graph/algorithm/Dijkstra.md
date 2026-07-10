@@ -2,6 +2,8 @@ Algorithm is popular method to find the **shortest path** in a graph, which can 
 
 It works in both directed and un-directed graphs
 
+⚠️ This algorithm doesn't work for negative edges
+	Because it is a greedy approach and it assumes adding a edge can never make a path shorter
 ### Goal
 Goal of the algorithm is to find the quickest or easiest way to get from a starting point to an ending point by checking all the possible routes and choosing the ones with smallest total cost
 
