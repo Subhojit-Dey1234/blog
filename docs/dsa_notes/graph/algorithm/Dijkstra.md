@@ -87,3 +87,8 @@ Bidirectional Dijkstra is a variation of Dijkstra’s algorithm that runs two si
 - The other search starts from the target (destination) and moves backward.
 
 Both searches continue until they meet in the middle. The idea behind this approach is that it can significantly reduce the number of vertices and edges explored, especially in large graphs, by halving the search space.
+
+
+### Problems
+ - [Path with Maximum Probability](../problems/L1514.md)
+ - [Number of Ways to Arrive at Destination](../problems/L1976.md)
