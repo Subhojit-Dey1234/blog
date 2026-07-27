@@ -89,6 +89,62 @@ Bidirectional Dijkstra is a variation of Dijkstra’s algorithm that runs two si
 Both searches continue until they meet in the middle. The idea behind this approach is that it can significantly reduce the number of vertices and edges explored, especially in large graphs, by halving the search space.
 
 
+### TODO
+
+#### Print the shortest path
+
+```cpp
+
+#include <vector>
+#include <queue>
+#include <algorithm>
+#include <iostream>
+
+using namespace std;
+
+vector<int> dijkstraPath(int n, vector<vector<pair<int, int>>>& adj, int source, int dest) {
+    vector<int> dist(n + 1, 1e9);
+    vector<int> parent(n + 1);
+    for (int i = 1; i <= n; i++) parent[i] = i;
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    dist[source] = 0;
+    pq.push({0, source});
+
+    while (!pq.empty()) {
+        int u = pq.top().second;
+        int current_dist = pq.top().first;
+        pq.pop();
+
+        if (current_dist > dist[u]) continue;
+
+        for (auto& edge : adj[u]) {
+            int v = edge.first;
+            int weight = edge.second;
+
+            if (dist[u] + weight < dist[v]) {
+                dist[v] = dist[u] + weight;
+                parent[v] = u; // Track predecessor
+                pq.push({dist[v], v});
+            }
+        }
+    }
+
+    vector<int> path;
+    if (dist[dest] == 1e9) return path; // Return empty if path doesn't exist
+
+    int node = dest;
+    while (parent[node] != node) {
+        path.push_back(node);
+        node = parent[node];
+    }
+    path.push_back(source);
+    reverse(path.begin(), path.end());
+    
+    return path;
+}
+```
+
+
 ### Problems
  - [Path with Maximum Probability](../problems/L1514.md)
  - [Number of Ways to Arrive at Destination](../problems/L1976.md)

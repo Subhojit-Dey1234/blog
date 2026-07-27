@@ -2,6 +2,11 @@ This one discussed about the `Disjoint Set Union` or `DSU`. Often it is also cal
 
 This data structure provides the following capabilities. We are given several elements, each of which is a separate set. A `DSU` will have an operation to combine any two sets and it will be able to tell in which set a specific element is. The classic version also introduces a third operation, it can be create a set from a new element.
 
+### Why DSU ?
+1. Operation-1: Combine two given sets
+2. Operation-2: Tell if two members (b, g) belong to same set or not
+
+
 Basic interface of this data structure consists of only three operations:
 - `make_set(v)` - creates new set consisting of the new element v
 - `union_sets(a, b)` - merges the two sets ( the set where a is present and the set where b is present )
@@ -24,6 +29,7 @@ void make_set(int v) {
 }
 
 int find_set(int v) {
+	// give the leader of the set
     if (v == parent[v])
         return v;
     return find_set(parent[v]);
@@ -69,6 +75,12 @@ void make_set(int v) {
     size[v] = 1;
 }
 
+int find_set(int v) {
+    if (v == parent[v])
+        return v;
+    return parent[v] = find_set(parent[v]);
+}
+
 void union_sets(int a, int b) {
     a = find_set(a);
     b = find_set(b);
@@ -91,11 +103,17 @@ void make_set(int v) {
     rank[v] = 0;
 }
 
+int find_set(int v) {
+    if (v == parent[v])
+        return v;
+    return parent[v] = find_set(parent[v]);
+}
+
 void union_sets(int a, int b) {
     a = find_set(a);
     b = find_set(b);
     if (a != b) {
-        if (rank[a] < rank[b])
+        if (rank[a] < rank[b]) // the rank of el more will be the parent as more number of elements are pointing
             swap(a, b);
         parent[b] = a;
         if (rank[a] == rank[b])
@@ -104,3 +122,12 @@ void union_sets(int a, int b) {
 }
 ```
 
+ 
+## Problems
+
+### Detect Cycle using DSU
+
+#### Approach
+
+- Find the parent of all the edges
+- If the parent is same then there is a cycle
