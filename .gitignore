@@ -2,3 +2,7 @@ compiled_version/
 .cph/
 *.bin
 *.obsidian
+viewer/node_modules/
+docs/assets/js/excalidraw-viewer.js
+docs/assets/js/excalidraw-viewer.css
+docs/assets/js/excalidraw-assets/
