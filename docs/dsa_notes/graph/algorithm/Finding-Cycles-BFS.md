@@ -4,7 +4,8 @@ A `topological sort` of a directed acyclic graph is a linear ordering of its ver
 
 The *indegree* of a vertex is defined the number of edges incident on a vertex in a directed graph
 
-```
+```cpp
+
 #include <vector>
 #include <iostream>
 #include <queue>
